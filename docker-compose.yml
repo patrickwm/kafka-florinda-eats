@@ -1,12 +1,13 @@
+name: 'florinda-eats'
 services:
   kafka:
-    image: 'bitnami/kafka:latest'
+    image: 'bitnamilegacy/kafka:latest'
     ports:
       - '9094:9094'
     networks:
       - florinda-eats-network
     volumes:
-      - kafka.florinda.eats:/bitnami/kafka
+      - kafka.florinda.eats:/bitnamilegacy/kafka
     environment:
       - KAFKA_CFG_NODE_ID=0
       - KAFKA_CFG_PROCESS_ROLES=controller,broker
@@ -19,4 +20,3 @@ networks:
   florinda-eats-network:
 volumes:
   kafka.florinda.eats:
-
